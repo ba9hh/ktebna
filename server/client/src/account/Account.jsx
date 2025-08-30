@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import UserInformations from "./UserInformations.jsx";
-import Sidebar from "./SideBar.jsx";
+import Sidebar from "./Sidebar.jsx";
 import { Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider.jsx";
 const Account = () => {
