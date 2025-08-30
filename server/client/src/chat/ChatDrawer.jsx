@@ -5,7 +5,7 @@ import { AuthContext } from "../AuthProvider";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { X } from "lucide-react";
 
-const API = "http://localhost:3000/api";
+const API = "https://ktebna.onrender.com/api";
 
 export default function ChatDrawer({
   open,

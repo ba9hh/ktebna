@@ -12,7 +12,9 @@ const UserConversations = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const fetchConversations = async () => {
-    const res = await axios.get("http://localhost:3000/api/conversations");
+    const res = await axios.get(
+      "https://ktebna.onrender.com/api/conversations"
+    );
     return res.data;
   };
   const {

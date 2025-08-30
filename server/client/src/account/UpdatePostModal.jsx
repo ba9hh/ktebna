@@ -68,7 +68,7 @@ const UpdatePostModal = ({ open, onClose, post }) => {
       formData.append("image", file);
       try {
         const response = await axios.post(
-          "http://localhost:3000/upload",
+          "https://ktebna.onrender.com/upload",
           formData,
           {
             headers: { "Content-Type": "multipart/form-data" },
@@ -93,7 +93,10 @@ const UpdatePostModal = ({ open, onClose, post }) => {
     };
 
     try {
-      await axios.put(`http://localhost:3000/api/post/${post._id}`, payload);
+      await axios.put(
+        `https://ktebna.onrender.com/api/post/${post._id}`,
+        payload
+      );
       toast.success("Post updated successfully!");
       onClose();
     } catch (error) {

@@ -11,7 +11,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/validateToken", { withCredentials: true })
+      .get("https://ktebna.onrender.com/api/validateToken", {
+        withCredentials: true,
+      })
       .then((response) => {
         setUser(response.data.user);
         console.log(response.data);
@@ -31,7 +33,7 @@ const AuthProvider = ({ children }) => {
     try {
       const { credential } = googleResponse;
       const response = await axios.post(
-        "http://localhost:3000/api/auth/google",
+        "https://ktebna.onrender.com/api/auth/google",
         { token: credential },
         { withCredentials: true }
       );
@@ -47,7 +49,11 @@ const AuthProvider = ({ children }) => {
 
   const handleLogout = () => {
     axios
-      .post("http://localhost:3000/api/logout", {}, { withCredentials: true })
+      .post(
+        "https://ktebna.onrender.com/api/logout",
+        {},
+        { withCredentials: true }
+      )
       .then(() => {
         setUser(null);
         navigate("/login");

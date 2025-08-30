@@ -24,11 +24,15 @@ const fetchShops = async ({ queryKey }) => {
   if (category && category !== "All") params.category = category;
   if (search) params.search = search;
 
-  const res = await axios.get("http://localhost:3000/api/posts", { params });
+  const res = await axios.get("https://ktebna.onrender.com/api/posts", {
+    params,
+  });
   return res.data;
 };
 const fetchSavedPosts = async () => {
-  const response = await axios.get("http://localhost:3000/api/savedPostsIds");
+  const response = await axios.get(
+    "https://ktebna.onrender.com/api/savedPostsIds"
+  );
   return response.data;
 };
 const Books2 = () => {
@@ -62,10 +66,14 @@ const Books2 = () => {
       setSavingPostId(postId);
 
       if (savedPostsIds.includes(postId)) {
-        await axios.delete(`http://localhost:3000/api/unsavePost/${postId}`);
+        await axios.delete(
+          `https://ktebna.onrender.com/api/unsavePost/${postId}`
+        );
         return savedPostsIds.filter((id) => id !== postId);
       } else {
-        await axios.post("http://localhost:3000/api/savePost", { postId });
+        await axios.post("https://ktebna.onrender.com/api/savePost", {
+          postId,
+        });
         return [...savedPostsIds, postId];
       }
     },

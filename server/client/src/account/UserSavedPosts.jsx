@@ -6,7 +6,9 @@ const UserSavedPosts = () => {
   const [savingPostId, setSavingPostId] = useState(null);
 
   const fetchSavedPosts = async () => {
-    const response = await axios.get("http://localhost:3000/api/savedPosts");
+    const response = await axios.get(
+      "https://ktebna.onrender.com/api/savedPosts"
+    );
     return response.data;
   };
   const {
@@ -23,13 +25,18 @@ const UserSavedPosts = () => {
 
       if (savedPosts.some((p) => p.postId?._id === post._id)) {
         // unsave
-        await axios.delete(`http://localhost:3000/api/unsavePost/${post._id}`);
+        await axios.delete(
+          `https://ktebna.onrender.com/api/unsavePost/${post._id}`
+        );
         return savedPosts.filter((p) => p.postId?._id !== post._id);
       } else {
         // save
-        const res = await axios.post("http://localhost:3000/api/savePost", {
-          postId: post._id,
-        });
+        const res = await axios.post(
+          "https://ktebna.onrender.com/api/savePost",
+          {
+            postId: post._id,
+          }
+        );
         return [...savedPosts, res.data]; // assuming API returns saved post
       }
     },

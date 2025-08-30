@@ -11,7 +11,7 @@ const UserInformations = () => {
   const [newName, setNewName] = useState("");
 
   const fetchUserInfo = async () => {
-    const response = await axios.get("http://localhost:3000/api/user");
+    const response = await axios.get("https://ktebna.onrender.com/api/user");
     return response.data;
   };
   const {
@@ -27,7 +27,7 @@ const UserInformations = () => {
   }, [userInfo]);
   const handleSave = async () => {
     try {
-      await axios.put("http://localhost:3000/api/user/name", newName);
+      await axios.put("https://ktebna.onrender.com/api/user/name", newName);
     } catch (error) {
       console.log(error);
     }

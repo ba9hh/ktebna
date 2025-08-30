@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../AuthProvider";
 import { useParams } from "react-router-dom";
 
-const API = "http://localhost:3000/api";
+const API = "https://ktebna.onrender.com/api";
 
 export default function ChatApp() {
   const { user } = useContext(AuthContext);

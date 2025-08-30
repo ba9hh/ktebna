@@ -10,7 +10,9 @@ const UserPosts = () => {
   const [selectedPost, setSelectedPost] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const fetchPosts = async () => {
-    const response = await axios.get("http://localhost:3000/api/user/posts");
+    const response = await axios.get(
+      "https://ktebna.onrender.com/api/user/posts"
+    );
     return response.data;
   };
   const {

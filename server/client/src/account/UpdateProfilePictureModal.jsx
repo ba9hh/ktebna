@@ -32,16 +32,19 @@ const UpdateProfilePictureModal = ({
         const imgFormData = new FormData();
         imgFormData.append("image", file);
         const uploadRes = await axios.post(
-          "http://localhost:3000/upload",
+          "https://ktebna.onrender.com/upload",
           imgFormData,
           {
             headers: { "Content-Type": "multipart/form-data" },
           }
         );
         const uploadedImageUrl = uploadRes.data.url;
-        await axios.put("http://localhost:3000/api/user/profile-picture", {
-          newProfilePicture: uploadedImageUrl,
-        });
+        await axios.put(
+          "https://ktebna.onrender.com/api/user/profile-picture",
+          {
+            newProfilePicture: uploadedImageUrl,
+          }
+        );
       }
       handleClose();
       setFile(null);

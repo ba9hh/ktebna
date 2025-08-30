@@ -48,7 +48,7 @@ const AddPostModal = ({ open, onClose }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/upload",
+        "https://ktebna.onrender.com/upload",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -70,7 +70,7 @@ const AddPostModal = ({ open, onClose }) => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/post",
+        "https://ktebna.onrender.com/api/post",
         payload
       );
       toast.success("Product added successfully!");

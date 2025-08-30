@@ -19,7 +19,7 @@ const DeletePostModal = ({ open, onClose, postId }) => {
   const handleDelete = async () => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:3000/api/post/${postId}`);
+      await axios.delete(`https://ktebna.onrender.com/api/post/${postId}`);
       toast.success("Post deleted successfully!");
       onClose(true); // pass success flag
     } catch (error) {
